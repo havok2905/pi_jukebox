@@ -12,11 +12,11 @@ class Library:
   def file_objects(file):
     file_object = file_type(file)
     response = file_object.info
-    if(file_object.valid_type()):
+    if file_object.valid_type():
       return response
 
   def filter_items(item):
-    if(item == None):
+    if item == None:
       return item
 
   def query(self, pattern, file_type):

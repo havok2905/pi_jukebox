@@ -4,11 +4,11 @@ from file.music import Music
 class Jukebox(Library):
 
   def artist_init(self, artist):
-    if(artist not in self.library):
+    if artist not in self.library:
       self.library[artist] = {}
 
   def album_init(self, artist, album):
-    if(album not in self.library[artist]):
+    if album not in self.library[artist]:
       self.library[artist][album] = { songs: [] }
 
   def song_init(self, artist, album, song, file):
@@ -17,7 +17,7 @@ class Jukebox(Library):
   def collect_music(self):
     for file in os.listdir(self.location + '*/*/*'):
       song = Music(file)
-      if(song.valid_type?):
+      if song.valid_type():
         artist_init(song.artist)
         album_init(song.artist, song.album)
         song_init(*song.info)

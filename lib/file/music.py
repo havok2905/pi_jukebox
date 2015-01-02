@@ -17,7 +17,7 @@ class Music(Base):
     self.song      = path_list[2]
 
   def valid_type(self):
-    if(re.match(r'([^\s]+(\.(?i)(mp3|mp4|m4p|m4a))$)', self.path)):
+    if re.match(r'([^\s]+(\.(?i)(mp3|mp4|m4p|m4a))$)', self.path):
       return True
     else:
       return False
